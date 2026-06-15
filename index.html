@@ -537,7 +537,7 @@ async function fetchEntsoe() {
       // Extrahujeme typ z URL a voláme Vercel funkci
       const isGen = url.includes('A75');
       const type = isGen ? 'generation' : 'prices';
-      const r = await fetch(`/api/entsoe?type=${type}`, { signal: AbortSignal.timeout(15000) });
+      const r = await fetch(`/api/entsoe?type=${type}`, { signal: AbortSignal.timeout(25000) });
       if (!r.ok) throw new Error(`API: ${r.status}`);
       // Vercel funkce vrací JSON, ale náš kód čeká XML - konvertujeme zpátky
       const json = await r.json();
