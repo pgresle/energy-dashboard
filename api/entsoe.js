@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   }
 
   const type = req.query.type || 'prices';
-
+res.setHeader('Cache-Control', 's-maxage=300');
   try {
     const now = new Date();
     const pad = n => String(n).padStart(2, '0');
