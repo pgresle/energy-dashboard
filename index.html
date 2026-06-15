@@ -568,7 +568,6 @@ async function fetchEntsoe() {
     if (rPrice.ok) {
       const d = rPrice._isJson ? await rPrice.json() : null;
       const prices = (d && d.prices) ? d.prices.sort((a,b) => a.hour - b.hour) : [];
-      {
 
       if (prices.length > 0) {
         const currentHour = now.getHours();
